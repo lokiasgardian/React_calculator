@@ -1,49 +1,121 @@
+
+:root {
+  --bg: linear-gradient(135deg, #b39ee6, #231bfb);
+  --card: #ffffff;
+  --display: #d2d2d2;
+  --text: #111;
+  --num-bg: #ffffff;
+  --operator: #6c63ff;
+  --equal: #4b47ff;
+  --shadow: rgba(0, 0, 0, 0.2);
+}
+
+.dark {
+  --bg: linear-gradient(135deg, #0f0f1b, #1c1c3a);
+  --card: #1e1e2f;
+  --display: #2a2a40;
+  --text: #ffffff;
+  --num-bg: #2c2c45;
+  --operator: #8b82ff;
+  --equal: #6c63ff;
+  --shadow: rgba(0, 0, 0, 0.6);
+}
+
+
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .container {
-  background: linear-gradient(110deg, rgb(152, 152, 242), blue);
-  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: var(--bg);
+  transition: 0.3s ease;
 }
 
 .calculator {
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
+  position: relative;
+  width: 320px;
+  padding: 30px 20px 20px;
+  border-radius: 20px;
+  background: var(--card);
+  box-shadow: 0 15px 40px var(--shadow);
+  transition: 0.3s ease;
 }
 
-form input {
-  border-radius: 5px;
+
+.themeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.themeBtn button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
   border: none;
-  outline: 0;
-  width: 60px;
-  height: 60px;
-  background-color: rgb(192, 130, 249);
-  font-size: 16px;
-  font-weight: bold;
   cursor: pointer;
-  margin: 1px;
+  font-size: 16px;
+  background: var(--display);
+}
+
+
+.inputBox input {
+  width: 90%;
+  height: 70px;
+  font-size: 26px;
+  text-align: right;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  padding: 10px;
+  background: var(--display);
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+
+
+form div {
+  display: flex;
+   gap: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="button"] {
+  width: 22%;
+  height: 55px;
+  border-radius: 12px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+input[type="button"]:active {
+  transform: scale(0.95);
+}
+
+.num {
+  background: var(--num-bg);
+  color: var(--text);
+}
+
+.operator {
+  background: var(--operator);
   color: white;
 }
 
-form input[type="button"]:hover {
-  background-color: blueviolet;
-}
 
-.inputBox {
-  display: flex;
-  justify-content: flex-end;
-  margin: 5px 0px 10px 0px;
-  text-align: right;
-}
+form input.equal {
+  width: 150px;
+  background: var(--equal);
 
-.inputBox input[type="text"]{
-    text-align: right;
-   flex: 1;
-   font-size: 30px;
-}
 
- form input.equal{
-    width: 122px;
 }
